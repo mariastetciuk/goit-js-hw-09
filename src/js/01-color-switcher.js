@@ -10,6 +10,7 @@ const stopBtnEl = document.querySelector('[data-stop]');
 stopBtnEl.setAttribute('disabled', '');
 
 function onColorSwitcherStart() {
+  document.body.style.backgroundColor = getRandomHexColor();
   timerId = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor();
   }, 1000);
