@@ -12,6 +12,7 @@ const secondsEl = document.querySelector('[data-seconds]');
 let currentDate = new Date();
 let selectedDate = null;
 let deltaTime = null;
+let intervalId = null;
 
 buttonEl.setAttribute('disabled', 'true');
 
@@ -67,12 +68,22 @@ function convertMs(ms) {
 }
 
 function startTimer() {
-  const intervalId = setInterval(() => {
+  intervalId = setInterval(() => {
+    stopTimer();
+
     deltaTime -= 1000;
     convertMs(deltaTime);
     updateComponentsTimer(convertMs(deltaTime));
   }, 1000);
-  if (deltaTime === 0) {
+}
+
+function stopTimer() {
+  if (
+    (deysEl.textContent === '00') &
+    (hoursEl.textContent === '00') &
+    (minutesEl.textContent === '00') &
+    (secondsEl.textContent === '01')
+  ) {
     clearInterval(intervalId);
   }
 }
