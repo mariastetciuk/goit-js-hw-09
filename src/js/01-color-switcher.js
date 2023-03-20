@@ -7,7 +7,7 @@ const stopBtnEl = document.querySelector('[data-stop]');
 
 // let timerId = null;
 
-stopBtnEl.setAttribute('disabled', '');
+stopBtnEl.setAttribute('disabled', 'true');
 
 function onColorSwitcherStart() {
   document.body.style.backgroundColor = getRandomHexColor();
@@ -16,7 +16,7 @@ function onColorSwitcherStart() {
   }, 1000);
 
   stopBtnEl.removeAttribute('disabled');
-  startBtnEl.setAttribute('disabled', '');
+  startBtnEl.setAttribute('disabled', 'true');
 }
 
 function onColorSwitcherStartStop() {

@@ -16,7 +16,7 @@ function onHandleForm(event) {
   let position = 0;
 
   if (amount <= 0 || delay < 0 || step < 0) {
-    return alert(` Please input correct values (>=0)`);
+    Notiflix.Notify.failure(` Please input correct values (>=0)`);
   }
 
   for (let i = 1; i <= amount; i += 1) {
